@@ -1,0 +1,24 @@
+table,
+td,
+th {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 10px;
+}
+
+.flashcard {
+    background-color: whitesmoke;
+    font-size: x-large;
+    padding: 100px 160px;
+}
+
+.flashcard:hover {
+    background-color: whitesmoke;
+}
