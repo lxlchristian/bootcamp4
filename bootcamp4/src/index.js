@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import firebase from 'firebase/compat/app';
 import { Provider } from 'react-redux'
 import { initializeApp } from 'firebase/app';
-import 'firebase/database';
+import 'firebase/compat/database';
 import { legacy_createStore as createStore, combineReducers } from 'redux'
 import {
   ReactReduxFirebaseProvider,
@@ -16,16 +16,16 @@ import {
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCZLnm-pgQno1kBkFJqHzdJEXfFdi-G7Ho",
-    authDomain: "lxlchristian-bootcamp2.firebaseapp.com",
-    databaseURL: "https://lxlchristian-bootcamp2-default-rtdb.firebaseio.com",
-    projectId: "lxlchristian-bootcamp2",
-    storageBucket: "lxlchristian-bootcamp2.appspot.com",
-    messagingSenderId: "164984002429",
-    appId: "1:164984002429:web:5fbb774b00a2adfd545e14"
-};
+    apiKey: "AIzaSyBpUS8hI7tnKr9rLKcR1wdntUIPZGk3zeg",
+    authDomain: "lxlchristian-bootcamp4.firebaseapp.com",
+    databaseURL: "https://lxlchristian-bootcamp4-default-rtdb.firebaseio.com",
+    projectId: "lxlchristian-bootcamp4",
+    storageBucket: "lxlchristian-bootcamp4.appspot.com",
+    messagingSenderId: "727234419647",
+    appId: "1:727234419647:web:8c28cc374c5b4614355f0a"
+  };
 
-initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 // Add firebase to reducers
 const rootReducer = combineReducers({

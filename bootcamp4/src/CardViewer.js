@@ -3,7 +3,7 @@ import React from 'react';
 import { Link, withRouter } from "react-router-dom";
 import { firebaseConnect, isLoaded, isEmpty } from "react-redux-firebase";
 import { connect } from 'react-redux';
-import {compose } from 'redux';
+import { compose } from 'redux';
 
 class CardViewer extends React.Component {
     constructor(props) {
@@ -53,13 +53,14 @@ class CardViewer extends React.Component {
                 </div>
                 <p>Card {this.state.current_card + 1}/{this.props.cards.length}</p>
                 <hr />
-                <Link to="/editor">Go to card editor</Link>
+                <Link to="/">Home</Link>
             </div>
         )
     }
 }
 
 const mapStateToProps = (state, props) => {
+    console.log(state.firebase)
     const deck = state.firebase.data[props.match.params.deckId];
     const name = deck && deck.name;
     const cards = deck && deck.cards;
@@ -70,7 +71,7 @@ export default compose(
     withRouter,
     firebaseConnect(props => {
         const deckId = props.match.params.deckId;
-        return [{ path: `/flashcards/${deckId}}`, storeAs: deckId }];
+        return [{ path: `/flashcards/${deckId}`, storeAs: deckId }];
     }),
     connect(mapStateToProps),
 )(CardViewer);
